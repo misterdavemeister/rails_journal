@@ -1,0 +1,5 @@
+<h1><%= @entry.entry_type %></h1>
+<p><%= @entry.input %></p>
+<%= link_to "edit", edit_entry_path(@entry) %> | 
+<%= link_to "delete", entry_path(@entry), method: :delete, data: {confirm: "Really delete the entry?"}%><br/><br/>
+<%= link_to "<<Back to Entry List", entries_path %>
