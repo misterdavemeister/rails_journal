@@ -2,4 +2,13 @@
 <p><%= @entry.input %></p>
 <%= link_to "edit", edit_entry_path(@entry) %> | 
 <%= link_to "delete", entry_path(@entry), method: :delete, data: {confirm: "Really delete the entry?"}%><br/><br/>
+
+<h3>Comments (<%= @entry.comments.count %>)</h3>
+<% if @entry.comments.count > 0 %>
+	<%= render partial: 'entries/comment', collection: @entry.comments %>
+<% else %>
+	<h6>No Comments</h6>
+<% end %>
+
+<%= render partial: 'comments/form'%>
 <%= link_to "<<Back to Entry List", entries_path %>

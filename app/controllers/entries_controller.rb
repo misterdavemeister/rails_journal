@@ -7,6 +7,8 @@ class EntriesController < ApplicationController
   
   def show
     @entry = Entry.find(params[:id])
+    @comment = Comment.new
+    @comment.entry_id = @entry.id
   end
   
   def new
