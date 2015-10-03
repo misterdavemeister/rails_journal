@@ -1,10 +1,24 @@
 <h1>All Entries</h1>
 
-<ul id="entries">
+<ul id="entries" class="food">
+	<h2>Food</h2>
 	<% @entries.each do |entry| %>
-		<li class="<%=entry.entry_type%>">
-			<%= link_to entry.input, entry_path(entry), class:'entry_title', id: "entry_#{entry.id}" %>
-		</li>
+		<% if entry.entry_type == "Food" %>
+			<li class="<%=entry.entry_type%>">
+				<%= link_to entry.input, entry_path(entry), class:'entry_title', id: "entry_#{entry.id}" %>
+			</li>
+		<% end %>
+	<% end %>
+</ul>
+
+<ul id="entries" class="symptoms">
+	<h2>Symptoms</h2>
+	<% @entries.each do |entry| %>
+		<% if entry.entry_type == "Symptom" %>
+			<li class="<%=entry.entry_type%>">
+				<%= link_to entry.input, entry_path(entry), class:'entry_title', id: "entry_#{entry.id}" %>
+			</li>
+		<% end %>
 	<% end %>
 </ul>
 

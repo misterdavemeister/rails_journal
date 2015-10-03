@@ -5,12 +5,18 @@
 		<% end %>
 	</ul>
 	<p>
-		<%= f.label :entry_type %><br />
-		<%= f.text_field :entry_type %>
+		<%= f.label :entry_type %><br/>
+		<%= f.select :entry_type, [["Food", "Food"], ["Symptom", "Symptom"]] %>
+		<!--<%= f.label :entry_type %><br />
+		<%= f.text_field :entry_type %>-->	
 	</p>
 	<p>
-		<%= f.label :input %><br />
+		<%= f.label :input %><br/>
 		<%= f.text_area :input %>
+	</p>
+	<p>
+		<%= f.label :tag_list %><br/>
+		<%= f.text_field :tag_list %>
 	</p>
 	<p>
 		<%= f.submit %>

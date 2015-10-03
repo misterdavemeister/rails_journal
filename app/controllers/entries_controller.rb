@@ -51,4 +51,6 @@ class EntriesController < ApplicationController
     
     redirect_to entry_path(@entry) 
   end
+  
+  #### TAGS ####
 end

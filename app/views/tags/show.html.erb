@@ -1,0 +1,11 @@
+<h1>Entries Tagged with '<%= @tag.name %>'</h1>
+
+<ul>
+	<% @tag.entries.each do |entry| %>
+		<li>
+			<%= link_to entry.input, entry_path(entry) %>
+		</li>
+	<% end %>
+</ul><br/>
+<%= link_to "Tags", tags_path %> ||
+<%= link_to "Home", entries_path %>

@@ -1,0 +1,14 @@
+<h1>Listing All Tags</h1>
+<% if @tags.count > 0 %>
+	<% @tags.each do |tag| %>
+		<ul>
+			<li>
+				<%= link_to tag.name, tag_path(tag) %> ||
+				<%= link_to "delete", tag_path(tag), method: :delete, data: {confirm: "Really delete the tag?"}%><br/><br/>
+			</li>
+		</ul>
+	<% end %>
+<% else %>
+	<p>No Tags</p>
+<% end %>
+<%= link_to "Home", entries_path %>
