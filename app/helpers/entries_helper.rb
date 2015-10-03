@@ -1,5 +1,5 @@
 module EntriesHelper
   def entry_params
-    params.require(:entry).permit(:entry_type, :input, :tag_list)
+    params.require(:entry).permit(:entry_type, :input, :tag_list, :image)
   end
 end
