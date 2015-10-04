@@ -12,8 +12,10 @@
 <% end %>
 
 <p class="entry"><%= @entry.input %></p>
-<%= link_to "edit", edit_entry_path(@entry) %> | 
-<%= link_to "delete", entry_path(@entry), method: :delete, data: {confirm: "Really delete the entry?"}%><br/><br/>
+<% if logged_in? %>
+	<%= link_to "edit", edit_entry_path(@entry) %> | 
+	<%= link_to "delete", entry_path(@entry), method: :delete, data: {confirm: "Really delete the entry?"}%><br/><br/>
+<% end %>
 
 <h3>Comments (<%= @entry.comments.count %>)</h3>
 <% if @entry.comments.count > 0 %>

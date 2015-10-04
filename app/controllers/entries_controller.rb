@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  before_filter :require_login, except: [:show, :index]
   include EntriesHelper
   
   def index
