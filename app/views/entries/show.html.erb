@@ -1,11 +1,16 @@
 <h1><%= @entry.entry_type %></h1>
+
 <p>
 	<%= link_to "Tags:", tags_path %>
 	<% @entry.tags.each do |tag| %>
 		<%= link_to tag.name, tag_path(tag) %>
 	<% end %>
 </p>
-<p><%= image_tag @entry.image.url(:medium) %></p>
+
+<% if @entry.image.exists? %>
+	<p><%= image_tag @entry.image.url(:medium) %></p>
+<% end %>
+
 <p class="entry"><%= @entry.input %></p>
 <%= link_to "edit", edit_entry_path(@entry) %> | 
 <%= link_to "delete", entry_path(@entry), method: :delete, data: {confirm: "Really delete the entry?"}%><br/><br/>
